@@ -11,4 +11,8 @@
     <string name="hello">Hello</string>
     <string name="profile">Profile</string>
     <string name="logout">Logout</string>
+    <string name="insert_title">Create News</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+    <string name="date">Date</string>
 </resources>
