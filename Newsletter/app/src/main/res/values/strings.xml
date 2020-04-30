@@ -8,4 +8,7 @@
     <string name="gender_label">Gender</string>
     <string name="male_radio">Male</string>
     <string name="female_radio">Female</string>
+    <string name="hello">Hello</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
 </resources>

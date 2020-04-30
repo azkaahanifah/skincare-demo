@@ -1,16 +1,24 @@
 package com.dilla.newsletter
 
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
+import com.dilla.newsletter.activities.HomeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var PRIVATE_MODE = 0
+    private val PREF_NAME = "bitlabs"
+    var sharedPref : SharedPreferences? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        sharedPref = this.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         btn_submit.setOnClickListener {
             validate()
         }
@@ -65,6 +73,12 @@ class MainActivity : AppCompatActivity() {
     fun validate() {
         if (validateName() && validateEmail() && validatePassword() && validateGender()) {
             Toast.makeText(this@MainActivity, "Success", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            val editor = sharedPref!!.edit()
+            editor.putString("user-name", edit_name.text.toString())
+            editor.putString("user-email", edit_email.text.toString())
+            editor.apply()
+            startActivity(intent)
         }
     }
 }
