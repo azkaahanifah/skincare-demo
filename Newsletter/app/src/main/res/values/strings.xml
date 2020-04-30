@@ -15,4 +15,6 @@
     <string name="title">Title</string>
     <string name="body">Body</string>
     <string name="date">Date</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>

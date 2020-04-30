@@ -1,7 +1,8 @@
 package com.dilla.newsletter.activities
 
-class News (
-    val title : String,
-    val body : String,
-    val date : String
-)
+class News(title: String, body: String, date: String) {
+    var id: Int = 0
+    val title: String = title
+    val body: String = body
+    val date: String = date
+}

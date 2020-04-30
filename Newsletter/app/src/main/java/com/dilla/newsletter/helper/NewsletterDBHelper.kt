@@ -52,10 +52,25 @@ class NewsletterDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
                 val news = News(cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3))
+                news.id = cursor.getInt(0)
                 listNews.add(news)
             } while (cursor.moveToNext())
         }
         db.close()
         return listNews
+    }
+
+    fun updateNews(news: News, id: Int) {
+        val values = ContentValues()
+        values.put(COLUMN_TITLE, news.title)
+        values.put(COLUMN_BODY, news.body)
+        values.put(COLUMN_DATE, news.date)
+        val db = this.writableDatabase
+        db.update(TABLE_NAME, values, "_id = $id", null)
+    }
+
+    fun deleteNews(id: Int) {
+        val db = this.writableDatabase
+        db.delete(TABLE_NAME, "_id: $id", null)
     }
 }
