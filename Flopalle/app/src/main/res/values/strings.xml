@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Flopalle</string>
+    <string name="greeting_msg">Flopalle</string>
+    <string name="product_name">Nama Produk</string>
+    <string name="product_detail">Deskripsi Produk</string>
+    <string name="read_more"><![CDATA[Baca yuk >>]]></string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+</resources>
