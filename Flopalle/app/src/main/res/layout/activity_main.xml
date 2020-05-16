@@ -6,36 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:theme="@style/ToolBarTheme"
+    
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorSurface"
-        app:title="@string/greeting_msg"/>
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:layout_marginTop="57dp"
-        android:src="@drawable/home_image"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/welcome_flopalle"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="490dp"
-        android:layout_marginLeft="8dp"
-        android:text="Keep Glowing during Quarantine!"
-        android:textSize="17sp"
-        android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/about_me"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="300dp"
+            android:src="@drawable/icon_profile"/>
+    </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_health"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="210dp"
         tools:listitem="@layout/beauty_with_diy"/>
 
 </RelativeLayout>

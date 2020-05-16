@@ -40,7 +40,7 @@ class BeautyDiyAdapter(private val listDiy: ArrayList<BeautyDiy>) : RecyclerView
         holder.productName.text = diy.productName
         holder.productDetail.text = diy.productDetail
 
-        holder.btnReadMore.setOnClickListener() {
+        holder.readMore.setOnClickListener {
             onItemClickCallback.onItemClick(listDiy[holder.adapterPosition])
         }
     }
@@ -49,7 +49,7 @@ class BeautyDiyAdapter(private val listDiy: ArrayList<BeautyDiy>) : RecyclerView
         var productName: TextView = itemView.findViewById(R.id.product_name)
         var productDetail: TextView = itemView.findViewById(R.id.product_detail)
         var productImage: ImageView = itemView.findViewById(R.id.img_photo_diy)
-        var btnReadMore: Button = itemView.findViewById(R.id.btn_read_more)
+        var readMore: TextView = itemView.findViewById(R.id.read_more)
     }
 
     interface OnItemClickCallback {
